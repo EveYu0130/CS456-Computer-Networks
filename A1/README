@@ -8,7 +8,6 @@ Execution
   You should execute these shell scripts which will then call your client and server programs. (client.py, server.py)
   
     • Run server: ./server.sh <req_code>
-    
     • Run client: ./client.sh <server address> <n_port> <req_code> 'A man, a plan, a canal— Panama!'
 
 Environment
