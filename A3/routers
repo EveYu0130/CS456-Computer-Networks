@@ -1,0 +1,10 @@
+#!/bin/bash
+java router 1 ubuntu1604-002 9000 8641 &
+sleep 1;
+java router 2 ubuntu1604-002 9000 8642 &
+sleep 1;
+java router 3 ubuntu1604-002 9000 8643 &
+sleep 1;
+java router 4 ubuntu1604-002 9000 8644 &
+sleep 1;
+java router 5 ubuntu1604-002 9000 8645

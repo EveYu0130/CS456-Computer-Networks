@@ -1,0 +1,30 @@
+Xueyao Yu
+20622323
+
+CS456 A2
+
+Introduction:
+    This program implements a Go-Back-N protocol, which could be used to transfer a text file from one host to another
+    across an unreliable network. The protocol should be able to handle network errors such as packet loss and
+    duplicate packets.
+
+Compilation:
+    To run this program, the .java files needs to be first compiled using make
+
+Execution:
+    1. Run nEmulator: nEmulator-linux386 9991 <host2> 9994 9993 <host3> 9994 1 0.2 0
+    2: Run receiver: java receiver <host1> 9993 9994 <output file>
+    3: Run sender: java sender <host1> 9991 9992 <input file>
+
+    Three log files are generated:
+        1) seqnum.log: record the sequence number of all packets sent
+        2) ack.log: record the sequence numbers of all the ACK packets that the sender receives during the entire
+                    period of transmission
+        3) arrival.log: record the sequence numbers of all the data packets that the receiver receives during the
+                    entire period of transmission
+
+Environment:
+    The program is built and tested on three different machines in the student environment:
+    	1) Run nEmulator on host ubuntu1604-002
+        2) Run sender on host ubuntu1604-004
+        3) Run receiver on host ubuntu1604-006

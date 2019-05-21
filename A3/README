@@ -1,0 +1,47 @@
+Xueyao Yu
+20622323
+
+CS456 A3
+
+Introduction:
+    This program implements a shortest path routing algorithm (OSPF).
+
+Compilation:
+    To run this program, the .java files needs to be first compiled using make
+
+Execution:
+    1. Run nse on <hostX>:
+      ./nse-linux386 <hostY> <nse_port>
+      e.g. On host ubuntu1604-002, run "./nse-linux386 ubuntu1604-004 9000"
+    2: Run 5 routers on <hostY>:
+      java router <router_id> <hostX> <nse_port> <router_port>
+      e.g.
+      On host ubuntu1604-004, run
+        java router 1 ubuntu1604-002 9000 8641
+        java router 2 ubuntu1604-002 9000 8642
+        java router 3 ubuntu1604-002 9000 8643
+        java router 4 ubuntu1604-002 9000 8644
+        java router 5 ubuntu1604-002 9000 8645
+      on 5 terminals respectively and in order
+      In this case, the program needs to be terminated manually by ctrl+C
+
+      Alternatively, you can just open 1 terminal for all 5 routers and use
+      a bash script './routers' to run the routers.
+      In this case, you need to run 'pkill -9 java' to kill the running process
+      after the program terminated to make sure the port is not being used.
+
+Output:
+    Each router generate a log file recording all the messages that they receive and send.
+    The topology database and the corresponding RIB is also recorded for each change.
+    router1.log
+    router2.log
+    router3.log
+    router4.log
+    router5.log
+    Note: It takes some time for all log data to be generated. The logs may not complete
+          if you open them immediately after the program terminated.
+
+Environment:
+    The program is built and tested on two different machines in the student environment:
+    	1) Run nse on host ubuntu1604-002
+      2) Run router on host ubuntu1604-004
